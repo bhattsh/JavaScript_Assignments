@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+            function temprature(){
+                var tempInF = document.getElementById("tempInFahrenheit").value;
+
+                if(tempInF == "")
+                {
+                    alert("please enter temprature");
+                }
+                else if(isNaN(tempInF))
+                {
+                    alert("please enter a number");
+                }
+                else
+                {
+                    var tempInC = (tempInF -32)*5/9;
+                    alert("temprature in celsius is :"+tempInC);
+                }
+            }
+   </script>
+</head>
+<body>
+    <br>
+   <h2>Enter Temprature In Fahrenheit: <input type="text" id="tempInFahrenheit"></h2>  
+   <button onClick="temprature()" style="position:relative; left:350px">Temprature In Celsius</button>
+
+
+ 
+</body>
+</html>

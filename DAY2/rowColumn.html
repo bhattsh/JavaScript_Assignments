@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table,td{
+        border:1px solid black;
+    }
+    </style>
+
+<script>
+        function tableCreation()
+        {
+        row1 = prompt("enter no of rows");
+        col1 = prompt("enter no of columns");
+        var table = document.getElementById("myTable");
+
+
+       for(i=0;i<row1;i++)
+        {
+        var row =  table.insertRow(i);
+        var j;
+        
+        for(j=0;j<col1;j++)
+        {
+        var x = row.insertCell(j);
+        x.innerHTML = "row"+i+" "+"col"+j;
+        }
+        }
+        }
+
+         window.onload = tableCreation;
+</script>
+
+</head>
+<body>
+    <table id="myTable">
+
+
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to add a new row at the first position of the table and then add cells and content.</p>
+
+<table id="myTable">
+
+</table>
+<br>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "NEW CELL1";
+    cell2.innerHTML = "NEW CELL2";
+}
+</script>
+
+</body>
+</html>
+
+-->

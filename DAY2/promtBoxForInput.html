@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    for(i=0;i<3;i++)
+     { 
+        display ="";
+        num =  prompt("enter a number between 1 and 30");
+            if(isNaN(num))
+            {
+           alert("enter a number only");
+           i--;
+            }
+
+             else if(num<1 || num>30)
+            {
+           i--;
+           alert("enter number in between 1 and 30");
+            }
+
+            else
+             {
+            star();
+            input();
+             }
+    }  
+
+function star()
+{
+    while(num != 0)
+                {
+                    if(num == "1")
+                    {
+                        display =display+"*<br>";
+                        num--;
+                    }
+                    else{
+                    display = display+"*";
+                    num--;
+                    }
+                 }
+}
+
+function input()
+ {
+          
+            if(num == null)
+            {
+             display="enter a number";
+            }
+
+            else
+            {
+                 document.write(display);  
+            }
+       
+} 
+
+
+
+    </script>
+
+<p id="showNumber"></p>
+
+
+</body>
+</html>
