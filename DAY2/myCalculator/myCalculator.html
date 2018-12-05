@@ -5,41 +5,8 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
-    <script>
-        function option()
-        {
-            var options ="select one of the operations:\n 1.Add\n 2.Subtract\n 3.Multiply\n 4.Divide\n 5.Exponenet\n 6.Mean\n 7.Quit";
-            var selectedOption = prompt("select one of the operations:\n 1.Add\n 2.Subtract\n 3.Multiply\n 4.Divide\n 5.Exponenet\n 6.Mean\n 7.Quit");
-            var result = options.includes(selectedOption);
-            if(result)
-            {
-                if(result == "1")
-                {
-                var num1 =prompt("enter first number");
-                var num2 = prompt("enter second number");
-                var sum = parseInt(num1) + parseInt(num2);
-                document.getElementById("textBox").value = sum;
-                }
-
-                 if(result == "2")
-                {
-                var num1 =prompt("enter first number");
-                var num2 = prompt("enter second number");
-                var sub = parseInt(num2) + parseInt(num1);
-                document.getElementById("textBox").value = sub;
-                }
-                
-            } 
-            else
-            {
-                alert("please select from given options");
-                option();
-            }
-        }    
-
-    
-    </script>
+    <link rel="stylesheet" href="myCalculator.css">
+    <script type="text/javascript" src="myCalculator.js"></script>
 </head>
 <body>
     Result:<input type="text" id="textBox">
