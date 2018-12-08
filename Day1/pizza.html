@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizza</title>
+
+ 
+    <script>
+            submitPressed =1;
+            checkBoxValue="";
+            name="";
+            email="";
+            address="";
+            tip="";
+            delivery="";
+                function checkValues()
+                {
+                     name =document.getElementById("name").value; 
+                     email =document.getElementById("email").value;
+                     
+                     toppings =document.getElementsByName('check');
+                     
+                        for(var i=0,n=toppings.length;i<n;i++)
+                        {
+                        
+                            if(toppings[i].checked== true)
+                                checkBoxValue += " "+toppings[i].value;
+                        }
+                     
+                      delivery =document.getElementById("delivery").value;
+                     tip =document.getElementById("tip").value;
+                     address =document.getElementById("address").value;
+          
+        
+                if(name=="" || email=="" || checkValues=="" || address == ""){
+                    alert("please enter the values");
+                    submitPressed = 0;
+                  
+                }
+                else
+                {
+                    submitPressed =1;
+             
+                    //document.getElementById("email").value = email;
+        
+                     document.getElementById("name").value ="shubham";
+                    alert("everything entered in a right way"+name);
+                    document.getElementsByClassName("userName").value =name;
+                    
+                   // var btn =document.getElementById("displayButton");
+                   // btn.disabled= false;
+                  // checkSubmit();
+                }
+                }
+        
+                function checkSubmit()
+                {
+                    if(submitPressed == 1)
+                    {
+                        alert("submit button checked");
+                        showSummary();
+                    }
+                    else
+                        alert("enter values and click sumit first");
+                }
+        
+                function showSummary()
+                {
+                    alert("table creation");
+                    var table = document.getElementById("myTable");
+        
+                 var rowOne =  table.insertRow(0);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Name:";
+                colTwo.innerHTML = name;
+        
+                 var rowOne =  table.insertRow(1);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Email:";
+                colTwo.innerHTML = email;
+        
+                 var rowOne =  table.insertRow(2);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Address:";
+                colTwo.innerHTML = address;
+        
+                 var rowOne =  table.insertRow(3);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Toppings";
+                alert(checkBoxValue.value);
+                colTwo.innerHTML = checkBoxValue;
+        
+                 var rowOne =  table.insertRow(4);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Delivery?:";
+                colTwo.innerHTML = delivery;
+        
+                 var rowOne =  table.insertRow(5);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Tip amount:";
+                colTwo.innerHTML = tip;
+        
+                 var rowOne =  table.insertRow(6);
+                var colOne = rowOne.insertCell(0);
+                var colTwo = rowOne.insertCell(1);
+                colOne.innerHTML = "Total:";
+                colTwo.innerHTML = "";
+                }
+        
+        </script>
+        
+
+
+
+</head>
+<body>
+  <form>  
+    
+    <textarea rows="4" cols="50" style="position:relative;float:right"></textarea>
+    <br><br>
+    Name: <input type="text" id="name" class="userName" required>
+    Email: <input type="email" id="email" required>
+
+    <p id="toppings">Toppings:
+    Extra Cheese:<input type="checkbox" name="check" value="Extra Cheese">
+    Pepperoni: <input type="checkbox" name="check" value="Pepperoni">
+    Olives:<input type="checkbox" name="check" value="Olives">
+    Pepper:<input type="checkbox" name="check" value="Pepper">
+    Bacon: <input type="checkbox" name="check" value="Bacon">
+    Tomatoes: <input type="checkbox" name="check" value="Tomatoes">
+    Mushrooms: <input type="checkbox" name="check" value="Mushrooms">
+    </p>
+
+    <p><b>How do you want to get your pizza!</b>
+    Delivery<input type="radio" name ="delivery" id ="delivery" value="Delivery">
+    Pickup<input type="radio" name="delivery" value="Pickup">
+    </p>
+    Tip?<select id="tip">
+        <option>None</option>
+        <option>15%</option>
+        <option>20%</option>
+        <option>25%</option>
+    </select>
+    <hr>
+    Address<br><textarea rows="4" cols="50" id="address"></textarea><br><br>
+    <input type="button" value="Submit" onClick="checkValues()">
+    <input type="reset" value="Reset">
+    <input type="button" value="Show Summary" onClick="checkSubmit()" id="displayButton" >
+
+
+<table id="myTable"></table>
+</form>   
+
+
+</body>
+</html>
